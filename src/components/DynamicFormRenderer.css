@@ -1,0 +1,70 @@
+.dyn-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dyn-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.dyn-form__field--checkbox {
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.dyn-form__label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.dyn-form__required {
+  color: var(--dyn-form-required, #c00);
+  margin-left: 0.125rem;
+}
+
+.dyn-form__field input[type="text"],
+.dyn-form__field input[type="number"],
+.dyn-form__select {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--dyn-form-border, #ccc);
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.dyn-form__field input:focus,
+.dyn-form__select:focus {
+  outline: none;
+  border-color: var(--dyn-form-focus, #646cff);
+  box-shadow: 0 0 0 2px rgba(100, 108, 255, 0.2);
+}
+
+.dyn-form__field input[aria-invalid="true"] {
+  border-color: var(--dyn-form-invalid, #c00);
+}
+
+.dyn-form__field input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0;
+}
+
+.dyn-form__error {
+  font-size: 0.8125rem;
+  color: var(--dyn-form-error, #c00);
+}
+
+@media (prefers-color-scheme: dark) {
+  .dyn-form__field input[type="text"],
+  .dyn-form__field input[type="number"],
+  .dyn-form__select {
+    --dyn-form-border: #444;
+    background-color: #1a1a1a;
+    color: inherit;
+  }
+}

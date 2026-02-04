@@ -1,0 +1,17 @@
+.barcode-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.barcode-preview canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.barcode-preview__sku {
+  font-size: 0.875rem;
+  font-weight: 500;
+}

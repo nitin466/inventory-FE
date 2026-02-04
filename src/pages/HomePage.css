@@ -1,0 +1,21 @@
+.home-page {
+  padding: 2rem;
+  text-align: center;
+}
+
+.home-page h1 {
+  margin-bottom: 1rem;
+}
+
+.home-page code {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+@media (prefers-color-scheme: light) {
+  .home-page code {
+    background-color: rgba(0, 0, 0, 0.06);
+  }
+}
