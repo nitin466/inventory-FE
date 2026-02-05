@@ -1,0 +1,343 @@
+.sales-page {
+  max-width: 42rem;
+  padding: 1.5rem;
+}
+
+.sales-page__title {
+  margin: 0 0 1.5rem;
+  font-size: 1.5rem;
+}
+
+.sales-page__error {
+  margin: 0 0 1rem;
+  padding: 0.5rem 0.75rem;
+  background-color: rgba(200, 0, 0, 0.1);
+  border-radius: 4px;
+  color: var(--error-text, #b00);
+  font-size: 0.875rem;
+}
+
+.sales-page__section {
+  margin-bottom: 1.5rem;
+}
+
+.sales-page__heading {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.sales-page__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.sales-page__input {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--form-border, #ccc);
+  border-radius: 4px;
+  font-family: inherit;
+  min-width: 12rem;
+  flex: 1;
+}
+
+.sales-page__input:focus {
+  outline: none;
+  border-color: var(--form-focus, #646cff);
+}
+
+.sales-page__btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: inherit;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.sales-page__btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.sales-page__btn--primary {
+  background-color: #646cff;
+  color: #fff;
+}
+
+.sales-page__btn--primary:hover:not(:disabled) {
+  background-color: #535bf2;
+}
+
+.sales-page__btn--confirm {
+  padding: 0.6rem 1.25rem;
+}
+
+.sales-page__btn--secondary {
+  background-color: transparent;
+  color: var(--form-focus, #646cff);
+  border-color: var(--form-focus, #646cff);
+}
+
+.sales-page__btn--secondary:hover {
+  background-color: rgba(100, 108, 255, 0.1);
+}
+
+.sales-page__btn--remove {
+  background-color: transparent;
+  color: var(--error-text, #b00);
+  border-color: var(--error-text, #b00);
+  padding: 0.4rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.sales-page__btn--remove:hover {
+  background-color: rgba(200, 0, 0, 0.1);
+}
+
+/* Product Preview */
+.sales-page__preview {
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 6px;
+  border: 1px solid var(--form-border, #ddd);
+}
+
+.sales-page__preview-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sales-page__preview-name {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 600;
+}
+
+.sales-page__preview-attributes {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.sales-page__preview-attr {
+  display: flex;
+  gap: 0.35rem;
+  font-size: 0.875rem;
+}
+
+.sales-page__preview-attr-label {
+  margin: 0;
+  font-weight: 500;
+  color: var(--muted-text, #666);
+}
+
+.sales-page__preview-attr-label::after {
+  content: ':';
+}
+
+.sales-page__preview-attr-value {
+  margin: 0;
+}
+
+.sales-page__preview-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9375rem;
+}
+
+.sales-page__preview-label {
+  min-width: 8rem;
+  font-weight: 500;
+}
+
+.sales-page__preview-value {
+  font-weight: 500;
+}
+
+.sales-page__input--bargain {
+  min-width: 6rem;
+  max-width: 10rem;
+}
+
+.sales-page__preview-row--quantity .sales-page__preview-label {
+  align-self: center;
+}
+
+.sales-page__quantity-stepper {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.sales-page__stepper-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1;
+  border: 1px solid var(--form-border, #ccc);
+  border-radius: 4px;
+  background: var(--form-bg, #fff);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sales-page__stepper-btn:hover:not(:disabled) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.sales-page__stepper-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sales-page__input--quantity {
+  width: 4rem;
+  min-width: 4rem;
+  max-width: 5rem;
+  text-align: center;
+  margin: 0 0.25rem;
+}
+
+.sales-page__preview-discount {
+  font-weight: 500;
+}
+
+.sales-page__preview-discount--exceeded {
+  color: var(--error-text, #b00);
+  font-weight: 600;
+}
+
+.sales-page__preview-warning {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--error-text, #b00);
+  font-weight: 500;
+}
+
+.sales-page__totals {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 4px;
+}
+
+.sales-page__total-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+  font-size: 0.9375rem;
+}
+
+.sales-page__total-label {
+  font-weight: 500;
+}
+
+.sales-page__total-value {
+  font-weight: 600;
+}
+
+.sales-page__payment-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.sales-page__payment-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.sales-page__select {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--form-border, #ccc);
+  border-radius: 4px;
+  font-family: inherit;
+  min-width: 6rem;
+}
+
+.sales-page__select:focus {
+  outline: none;
+  border-color: var(--form-focus, #646cff);
+}
+
+.sales-page__input--amount {
+  min-width: 6rem;
+  flex: 0 1 8rem;
+}
+
+.sales-page__table-wrap {
+  overflow-x: auto;
+}
+
+.sales-page__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.sales-page__table th,
+.sales-page__table td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--table-border, #eee);
+}
+
+.sales-page__table th {
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.sales-page__empty {
+  color: var(--muted-text, #666);
+  font-style: italic;
+}
+
+.sales-page__actions {
+  margin-top: 1.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .sales-page__input,
+  .sales-page__select {
+    background-color: #1a1a1a;
+    color: inherit;
+    --form-border: #444;
+  }
+  .sales-page__preview {
+    background-color: rgba(255, 255, 255, 0.05);
+    --form-border: #444;
+  }
+  .sales-page__preview-attr-label {
+    color: #999;
+  }
+  .sales-page__totals {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  .sales-page__table th,
+  .sales-page__table td {
+    --table-border: #333;
+  }
+  .sales-page__table th {
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+  .sales-page__empty {
+    --muted-text: #999;
+  }
+}

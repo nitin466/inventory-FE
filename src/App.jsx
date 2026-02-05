@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { ProductEntryPage, ProductListPage } from './pages'
+import { ProductEntryPage, ProductListPage, SalesPage } from './pages'
 import './App.css'
 
 
@@ -8,6 +8,7 @@ function App() {
     <Routes>
       <Route path="/entry" element={<ProductEntryPage />} />
       <Route path="/products" element={<ProductListPage />} />
+      <Route path="/sales" element={<SalesPage />} />
     </Routes>
   )
 }
