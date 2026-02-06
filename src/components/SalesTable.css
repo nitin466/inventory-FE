@@ -1,0 +1,97 @@
+.sales-table__wrap {
+  overflow-x: auto;
+}
+
+.sales-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.sales-table th,
+.sales-table td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--table-border, #eee);
+}
+
+.sales-table th {
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.sales-table__th-expand {
+  width: 2rem;
+  padding-right: 0;
+}
+
+.sales-table__cell-expand {
+  width: 2rem;
+  padding-right: 0;
+  vertical-align: middle;
+}
+
+.sales-table__chevron {
+  font-size: 0.75rem;
+  color: var(--muted-text, #666);
+}
+
+.sales-table__row {
+  cursor: pointer;
+}
+
+.sales-table__row:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.sales-table__cell-num {
+  text-align: right;
+}
+
+.sales-table__payment-summary {
+  font-size: 0.875rem;
+  max-width: 14rem;
+}
+
+.sales-table__expanded-row {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.sales-table__expanded-cell {
+  padding: 0 0.75rem 0.75rem 2.5rem;
+  vertical-align: top;
+  border-bottom: 1px solid var(--table-border, #eee);
+}
+
+.sales-table__items-wrap {
+  overflow-x: auto;
+}
+
+.sales-table__items-table {
+  width: 100%;
+  min-width: 24rem;
+  font-size: 0.875rem;
+  border-collapse: collapse;
+}
+
+.sales-table__items-table th,
+.sales-table__items-table td {
+  padding: 0.35rem 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid var(--table-border, #eee);
+}
+
+.sales-table__items-table th {
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.sales-table__items-table .sales-table__cell-num {
+  text-align: right;
+}
+
+.sales-table__empty {
+  padding: 1rem;
+  color: var(--muted-text, #666);
+  font-style: italic;
+}

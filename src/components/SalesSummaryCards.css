@@ -1,0 +1,59 @@
+.sales-summary-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sales-summary-cards__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: 0.75rem;
+}
+
+.sales-summary-cards__card {
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 6px;
+  border: 1px solid var(--card-border, #eee);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sales-summary-cards__card-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted-text, #666);
+}
+
+.sales-summary-cards__card-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.sales-summary-cards__payments {
+  margin-top: 0.25rem;
+}
+
+.sales-summary-cards__table {
+  width: auto;
+  min-width: 12rem;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.sales-summary-cards__table th,
+.sales-summary-cards__table td {
+  padding: 0.35rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--table-border, #eee);
+}
+
+.sales-summary-cards__table th {
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.sales-summary-cards__table td:last-child {
+  text-align: right;
+}

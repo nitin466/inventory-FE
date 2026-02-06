@@ -4,18 +4,21 @@ import { BrowserMultiFormatReader } from '@zxing/browser'
 import './CameraScanModal.css'
 
 const hints = new Map()
-hints.set(DecodeHintType.POSSIBLE_FORMATS, [BarcodeFormat.CODE_128])
+hints.set(DecodeHintType.POSSIBLE_FORMATS, [BarcodeFormat.CODE_128, BarcodeFormat.CODE_39])
 
+/** Back camera on mobile (environment), with ideal resolution. No listVideoInputDevices. */
 const VIDEO_CONSTRAINTS = {
   video: {
+    facingMode: 'environment',
     width: { ideal: 1280 },
     height: { ideal: 720 },
   },
 }
 
 /**
- * Modal that uses the device camera to scan barcodes (CODE_128).
- * When a code is decoded, onScan(decodedText) is called, camera stops, and modal closes.
+ * Modal that uses the device camera to scan barcodes (CODE_128, CODE_39).
+ * Uses back camera on mobile (facingMode: environment). On decode, onScan(decodedText) is
+ * called with the SKU, camera stops, and modal closes. PWA / iOS Safari friendly (playsInline, muted).
  */
 function CameraScanModal({ open, onClose, onScan }) {
   const videoRef = useRef(null)
@@ -42,28 +45,21 @@ function CameraScanModal({ open, onClose, onScan }) {
     setStatus('starting')
     setError(null)
 
-    BrowserMultiFormatReader.listVideoInputDevices()
-      .then((devices) => {
+    codeReader
+      .decodeFromConstraints(VIDEO_CONSTRAINTS, video, (result, err, controls) => {
         if (cancelled) return
-        const constraints = { ...VIDEO_CONSTRAINTS }
-        if (devices.length > 0) {
-          constraints.video = { ...constraints.video, deviceId: { exact: devices[0].deviceId } }
-        }
-        return codeReader.decodeFromConstraints(constraints, video, (result, err, controls) => {
-          if (cancelled) return
-          if (result) {
-            const text = result.getText()
-            const trimmed = text != null ? String(text).trim() : ''
-            if (trimmed === '') return
-            try {
-              controls.stop()
-            } finally {
-              controlsRef.current = null
-            }
-            onScan(trimmed)
-            onClose()
+        if (result) {
+          const text = result.getText()
+          const trimmed = text != null ? String(text).trim() : ''
+          if (trimmed === '') return
+          try {
+            if (controls) controls.stop()
+          } finally {
+            controlsRef.current = null
           }
-        })
+          onScan(trimmed)
+          onClose()
+        }
       })
       .then((controls) => {
         if (!cancelled && controls) {
@@ -123,8 +119,8 @@ function CameraScanModal({ open, onClose, onScan }) {
             ref={videoRef}
             className="camera-scan-modal__video"
             autoPlay
-            muted
             playsInline
+            muted
             style={{ display: status === 'scanning' ? 'block' : 'none' }}
           />
           {status === 'starting' && (

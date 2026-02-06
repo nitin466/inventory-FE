@@ -1,0 +1,104 @@
+.inventory-valuation-page {
+  max-width: 64rem;
+  padding: 1.5rem;
+}
+
+.inventory-valuation-page__title {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.inventory-valuation-page__subtitle {
+  margin: 0 0 1.5rem;
+  font-size: 0.9375rem;
+  color: var(--muted-text, #666);
+}
+
+.inventory-valuation-page__summary {
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 6px;
+  font-size: 1.0625rem;
+}
+
+.inventory-valuation-page__summary strong {
+  margin-right: 0.5rem;
+}
+
+.inventory-valuation-page__loading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  font-size: 0.9375rem;
+}
+
+.inventory-valuation-page__spinner {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid var(--form-border, #ccc);
+  border-top-color: var(--form-focus, #646cff);
+  border-radius: 50%;
+  animation: inventory-valuation-page__spin 0.7s linear infinite;
+}
+
+@keyframes inventory-valuation-page__spin {
+  to { transform: rotate(360deg); }
+}
+
+.inventory-valuation-page__error {
+  margin: 0 0 1rem;
+  padding: 0.5rem 0.75rem;
+  background-color: rgba(200, 0, 0, 0.1);
+  border-radius: 4px;
+  color: var(--error-text, #b00);
+  font-size: 0.875rem;
+}
+
+.inventory-valuation-page__empty {
+  margin: 1rem 0 0;
+  color: var(--muted-text, #666);
+  font-style: italic;
+  font-size: 0.9375rem;
+}
+
+.inventory-valuation-page__table-wrap {
+  overflow-x: auto;
+  margin-top: 0.5rem;
+}
+
+.inventory-valuation-page__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.inventory-valuation-page__table th,
+.inventory-valuation-page__table td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--table-border, #eee);
+}
+
+.inventory-valuation-page__table th {
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.inventory-valuation-page__th-num {
+  text-align: right;
+}
+
+.inventory-valuation-page__cell-num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.inventory-valuation-page__attrs {
+  max-width: 14rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
